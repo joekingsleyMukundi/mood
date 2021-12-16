@@ -1,6 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:mood/helpInstitutions.dart';
 import 'package:mood/home.dart';
+import 'package:mood/splashscreen.dart';
 
 List<CameraDescription>? cameras;
 
@@ -18,7 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: WlcomePage(),
+      routes: {
+        Home.routename: (context) => const Home(),
+        Help.routename: (context) => const Help()
+      },
     );
   }
 }
